@@ -1,4 +1,3 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import HomePageText from "@/assets/HomePageText.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
@@ -6,14 +5,17 @@ import YoutubeLogo from "@/assets/youtubeLogo.png";
 import InstagramLogo from "@/assets/IGLogo.png";
 import TikTokLogo from "@/assets/tiktokLogo.png";
 import { motion } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
+
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Home = ({ setSelectedPage }: Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const isBelowMediumScreens = useMediaQuery("(max-width: 1060px)");
+  const isXSmallScreens = useMediaQuery("(max-width: 480px)");
 
   const handleYoutubeButtonClick = () => {
     window.location.href = 'https://www.youtube.com/@BFFsOnTheGo';
@@ -23,6 +25,23 @@ const Home = ({ setSelectedPage }: Props) => {
   };
   const handleTikTokButtonClick = () => {
     window.location.href = 'https://www.tiktok.com/@bffsonthegooo';
+  };
+
+  const handleSelectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = event.target.value;
+    
+    // Perform action based on the selected option
+    switch (selectedOption) {
+      case 'youtube':
+        handleYoutubeButtonClick();
+        break;
+      case 'instagram':
+        handleInstagramButtonClick();
+        break;
+      case 'tiktok':
+        handleTikTokButtonClick();
+        break;
+    }
   };
 
   const homeVideoId = "6uZL79V-9xI";
@@ -76,7 +95,19 @@ const Home = ({ setSelectedPage }: Props) => {
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              {isBelowMediumScreens && (
+              {isXSmallScreens ? (
+                <div >
+                  <select
+                      className="mb-10 rounded-lg bg-secondary-500 px-8 py-2 transition duration-500 hover:text-white"
+                      onChange={(event) => handleSelectionChange(event)}
+                    >
+                      <option value="">Connect with us!</option>
+                      <option value="youtube">Youtube</option>
+                      <option value="instagram">Instagram</option>
+                      <option value="tiktok">TikTok</option>
+                    </select>
+                </div>
+              ) : isBelowMediumScreens ? (
                 <div className="flex gap-8">
                   <button className="mb-10 rounded-lg bg-secondary-500 px-8 py-2 transition duration-500 hover:text-white" 
                     onClick={handleYoutubeButtonClick}
@@ -94,7 +125,7 @@ const Home = ({ setSelectedPage }: Props) => {
                     TikTok
                   </button>
                 </div>
-              )}
+              ) : null}
             </motion.div>
           </div>
         </div>
@@ -108,7 +139,7 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
 
-      {/* SPONSORS */}
+      {/* SOCIAL MEDIA LINKS */}
       {isAboveMediumScreens && (
         <div className="h-[150px] w-full bg-primary-100 py-10">
           <div className="mx-auto w-5/6">

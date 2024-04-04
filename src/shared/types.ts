@@ -5,13 +5,13 @@ export enum SelectedPage {
     ContactUs = "contactus",
   }
   
-  export interface VlogType {
+export interface VlogType {
     icon: string;
     title: string;
     description: string;
   }
   
-  export interface VideoType {
+export interface VideoType {
     name: string;
     videoId: string;
   }
