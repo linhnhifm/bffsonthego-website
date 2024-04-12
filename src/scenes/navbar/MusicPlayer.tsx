@@ -5,7 +5,7 @@ import {
     PauseCircleIcon
   } from "@heroicons/react/24/solid";
 
-const MusicPlayer: React.FC = () => {
+const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
