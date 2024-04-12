@@ -43,7 +43,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           }}
         >
           <HText>
-            <span className="text-primary-500">CONTACT</span> US
+            CONTACT US
           </HText>
           <p className="my-5">
             Let us know cool places to travel to, yummy food to eat, or what other activities we should do!

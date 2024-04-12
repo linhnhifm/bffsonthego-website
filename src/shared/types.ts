@@ -2,6 +2,7 @@ export enum SelectedPage {
     Home = "home",
     AboutUs = "aboutus",
     VideoGallery = "videogallery",
+    EmojiBoard = "emojiboard",
     ContactUs = "contactus",
   }
   

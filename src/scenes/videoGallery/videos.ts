@@ -29,5 +29,9 @@ import { VideoType } from "@/shared/types";
     {
         name: "We tried big brand bubble teas in Waterloo!",
         videoId: "s8A_DPDSY2c"
+    },
+    {
+      name: "\"2 days into college\" from unemployed pov",
+      videoId: "1StzB3el2FE"
     }
   ];

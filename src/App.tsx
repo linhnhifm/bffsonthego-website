@@ -1,7 +1,8 @@
 import Navbar from "../src/scenes/navbar";
 import Home from "@/scenes/home";
 import VideoGallery from "@/scenes/videoGallery";
-import Benefits from "./scenes/aboutUs";
+import AboutUs from "./scenes/aboutUs";
+import EmojiBoard from "@/scenes/emojiBoard";
 import ContactUs from "@/scenes/contactUs";
 import Footer from "@/scenes/footer";
 import { useEffect, useState } from "react";
@@ -33,8 +34,9 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
+      <AboutUs setSelectedPage={setSelectedPage} />
       <VideoGallery setSelectedPage={setSelectedPage} />
+      <EmojiBoard setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />
       <Footer />
     </div>

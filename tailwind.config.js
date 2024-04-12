@@ -34,11 +34,14 @@ export default {
         sparklesyellow: "url('./assets/Sparkles2.png')",
         circles: "url('./assets/Circles.png')",
       },
+      height: {
+        '32rem': '32rem',
+      },
     },
     screens: {
       xs: "480px",
       sm: "768px",
-      md: "1060px",
+      md: "1060px"
     },
   },
   plugins: [],

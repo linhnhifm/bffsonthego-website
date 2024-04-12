@@ -48,6 +48,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
+                    page="Emoji Board"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <Link
                     page="Contact Us"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
@@ -98,6 +103,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             />
             <Link
               page="Video Gallery"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Emoji Board"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
