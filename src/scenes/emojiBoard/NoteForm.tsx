@@ -64,7 +64,7 @@ const NoteForm = ({ onSubmit }: Props) => {
       </div>
       <button
         type="submit"
-        className="rounded-full bg-secondary-500 px-5 py-2 hover:bg-primary-500 hover:text-white"
+        className="rounded-lg bg-secondary-500 px-5 py-2 hover:bg-primary-500 hover:text-white"
       >
         Add Emoji
       </button>

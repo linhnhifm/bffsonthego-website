@@ -1,8 +1,7 @@
-import { SelectedPage, VideoType } from "@/shared/types";
+import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
-import Video from "./Video";
-import {videos} from "./videos";
+import VideoList from "./VideoList";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -37,15 +36,9 @@ const VideoGallery = ({ setSelectedPage }: Props) => {
           </div>
         </motion.div>
         <div className="mt-10 md:ml-28 h-[380px] md:w-5/6 overflow-x-auto overflow-y-hidden">
-          <ul className="w-[2800px] whitespace-nowrap">
-            {videos.map((item: VideoType, index) => (
-              <Video
-                key={`${item.name}-${index}`}
-                name={item.name}
-                videoId={item.videoId}
-              />
-            ))}
-          </ul>
+          <VideoList 
+            maxResults={5}
+            order={'date'}/>
         </div>
       </motion.div>
     </section>

@@ -11,8 +11,22 @@ export interface VlogType {
     title: string;
     description: string;
   }
-  
-export interface VideoType {
-    name: string;
-    videoId: string;
-  }
+
+  export interface VideoType {
+    id: {
+        videoId: string;
+    };
+    snippet: {
+        title: string;
+        description: string;
+        thumbnails: {
+            default: {
+                url: string;
+            };
+        };
+    };
+}
+
+export interface YouTubeResponse {
+    items: VideoType[];
+}

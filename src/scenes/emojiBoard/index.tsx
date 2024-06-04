@@ -1,6 +1,6 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import Board from "./Board";
+import BoardArea from "./BoardArea";
 import HText from "@/shared/HText";
 
 type Props = {
@@ -31,7 +31,7 @@ const EmojiBoard = ({ setSelectedPage }: Props) => {
                 </motion.div>
                 
                 <div className="mx-auto w-5/6">
-                    <Board />
+                    <BoardArea />
                 </div>
             </motion.div>
         </section>

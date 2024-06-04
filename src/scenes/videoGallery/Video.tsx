@@ -12,7 +12,8 @@ const Video = ({ videoId }: Props) => {
       <YouTube
         className="shadow-lg rounded-lg overflow-hidden"
         videoId={videoId}
-        opts={{ playerVars: { controls: 0 } }}
+        opts={{
+          playerVars: { controls: 1 } }}
       />
     </li>
   );

@@ -6,7 +6,9 @@ import InstagramLogo from "@/assets/IGLogo.png";
 import TikTokLogo from "@/assets/tiktokLogo.png";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
-
+import YouTube from 'react-youtube';
+import fetchYoutubeVideos from "@/shared/fetchYoutubeVideos";
+import { VideoType } from "@/shared/types";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -44,7 +46,7 @@ const Home = ({ setSelectedPage }: Props) => {
     }
   };
 
-  const homeVideoId = "6uZL79V-9xI";
+  const homePageVideo = fetchYoutubeVideos( 1, 'viewCount' )
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
@@ -76,12 +78,24 @@ const Home = ({ setSelectedPage }: Props) => {
 
           {/* ACTIONS */}
           <div className="mt-8">
-            <div className="mb-5 border border-gray-300 rounded-lg overflow-hidden inline-block" style={{ maxWidth: "100%", width: "80%", height: "0", paddingBottom: "45%", position: "relative", overflow: "hidden" }}>
-              <iframe
-                title="YouTube Video"
-                src={`https://www.youtube.com/embed/${homeVideoId}`}
-                allowFullScreen
-                style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}
+            <div className="mb-5 border border-gray-300 rounded-lg overflow-hidden inline-block" style={{ maxWidth: "100%", width: "80%", height: "0", paddingBottom: "45%", position: "relative" }}>
+              <YouTube
+                className="shadow-lg rounded-lg overflow-hidden"
+                videoId={homePageVideo.length > 0 ? homePageVideo[0].id.videoId : ''}
+                opts={{
+                  height: '100%',
+                  width: '100%',
+                  playerVars: {
+                    controls: 1,
+                  },
+                }}
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "100%",
+                }}
               />
             </div>
             <motion.div
