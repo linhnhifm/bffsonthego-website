@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import YouTube from 'react-youtube';
 import fetchYoutubeVideos from "@/shared/fetchYoutubeVideos";
-import { VideoType } from "@/shared/types";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
