@@ -68,7 +68,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             <form
               target="_blank"
               onSubmit={onSubmit}
-              action="https://api.web3forms.com/submit" //web3forms
+              action="https://formsubmit.co/3b161bfc5f47f4954ddac8397f91d0a9"
               method="POST"
             >
 
